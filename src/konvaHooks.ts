@@ -19,15 +19,17 @@ export function useKonva(
         app.current.add(layer.current)
         horizontal.current = new Konva.Line({
             points: [0,10,500,10],
-            stroke: 'green',
-            strokeWidth: 1,
-            dash: [5, 5]
+            stroke: 'red',
+            strokeWidth: 2,
+            dash: [5, 5],
+            visible: false
         })
         vertical.current = new Konva.Line({
             points: [10,0,10,500],
-            stroke: 'green',
-            strokeWidth: 1,
-            dash: [5, 5]
+            stroke: 'black',
+            strokeWidth: 2,
+            dash: [5, 5],
+            visible: false
             })
         layer.current.add(vertical.current, horizontal.current)
     }

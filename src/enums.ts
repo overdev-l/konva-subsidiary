@@ -1,0 +1,11 @@
+export const HORIZONTAL_TOP_DISTANCE = [ 0, 0, 500, 0]
+
+export const HORIZONTAL_BOTTOM_DISTANCE = [ 0, 300, 500, 300]
+
+export const HORIZONTAL_MIDDLE_DISTANCE = [ 0, 150, 500, 150]
+
+export const VERTICAL_LEFT_DISTANCE = [ 0, 0, 0, 300]
+
+export const VERTICAL_RIGHT_DISTANCE = [ 500, 0, 500, 300]
+
+export const VERTICAL_MIDDLE_DISTANCE = [ 250, 0, 250, 300]
