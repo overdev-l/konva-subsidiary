@@ -9,18 +9,30 @@ import { HORIZONTAL_BOTTOM_DISTANCE, HORIZONTAL_MIDDLE_DISTANCE, HORIZONTAL_TOP_
 
 export function addImage(layer: Konva.Layer): Promise<Konva.Image> {
     return new Promise((res) => {
+        const group = new Konva.Group({
+            draggable: true
+        })
+        layer.add(group)
         const img = new window.Image()
         img.onload = () => {
             const image = new Konva.Image({
                 width: 106,
                 height: 118,
-                x: 100,
-                y: 100,
                 image: img,
-                draggable: true
+                draggable: false
             })
-            layer.add(image)
+            group.add(image)
             image.moveToBottom()
+            group.clipWidth(106)
+            group.clipHeight(118)
+            const line = new Konva.Line({
+                points: [10, 50, 200, 50],
+                stroke: 'red',
+                strokeWidth: 10,
+                lineCap: 'round',
+                globalCompositeOperation: 'destination-out',
+            })
+            group.add(line)
             res(image)
         }
         img.src = 'https://konvajs.org/assets/yoda.jpg'
