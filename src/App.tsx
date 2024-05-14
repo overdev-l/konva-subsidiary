@@ -7,7 +7,6 @@ function App() {
   useEffect(() => {
     if (layer.current) {
       addImage(group.current)
-      addImage(group.current)
     }
   }, [group, layer])
 

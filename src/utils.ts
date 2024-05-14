@@ -12,6 +12,14 @@ export function addImage(layer: Konva.Layer): Promise<Konva.Image> {
         const group = new Konva.Group({
             draggable: true
         })
+        const rect = new Konva.Rect({
+            x: 10,
+            y: 10,
+            width: 100,
+            height: 100,
+            fill: 'red',
+        })
+        layer.add(rect)
         layer.add(group)
         const img = new window.Image()
         img.onload = () => {
@@ -33,6 +41,15 @@ export function addImage(layer: Konva.Layer): Promise<Konva.Image> {
                 globalCompositeOperation: 'destination-out',
             })
             group.add(line)
+            group.cache()
+            // setTimeout(() => {
+            //     group.clearCache()
+            //     group.scale({
+            //         x: 2,
+            //         y: 2
+            //     })
+            //     group.cache()
+            // }, 2000)
             res(image)
         }
         img.src = 'https://konvajs.org/assets/yoda.jpg'
